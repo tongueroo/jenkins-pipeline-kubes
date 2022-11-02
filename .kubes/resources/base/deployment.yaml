@@ -1,0 +1,10 @@
+spec:
+  selector:
+    matchLabels:
+      app: demo
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: demo
+        env: dev

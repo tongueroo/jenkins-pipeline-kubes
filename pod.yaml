@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: shell
+    image: gcr.io/boltops-learn/jenkins-worker
+    # image: ubuntu
+    command:
+    - sleep
+    args:
+    - infinity

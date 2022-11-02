@@ -1,0 +1,4 @@
+metadata:
+  namespace: demo-<%= Kubes.env %>
+  labels:
+    app: demo
