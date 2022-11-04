@@ -29,6 +29,7 @@ pipeline {
                         kubes -v
 
                         type gcloud
+                        gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
                         gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
 
                         type kubectl
