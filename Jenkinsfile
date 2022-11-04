@@ -9,6 +9,11 @@ pipeline {
         string(name: 'ENV_NAME', defaultValue: 'dev', description: 'Environment name')
     }
 
+    environment {
+        // This is a path
+        GOOGLE_APPLICATION_CREDENTIALS = credentials("google-creds") // Jenkins Credentials Secret File
+    }
+
     stages {
         stage('Main') {
             steps {
@@ -22,6 +27,7 @@ pipeline {
                         ruby -v
                         type kubes
                         kubes -v
+                        env | sort
                     '''
                 }
             }

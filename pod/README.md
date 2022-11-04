@@ -8,5 +8,5 @@ The Dockerfile in this folder is used to build the pod that is used for the Jenk
 
 ## Build Commands
 
-		docker build -t gcr.io/boltops-learn/jenkins-worker .
-		docker push gcr.io/boltops-learn/jenkins-worker
+    docker build -t gcr.io/boltops-learn/jenkins-worker .
+    docker push gcr.io/boltops-learn/jenkins-worker
