@@ -18,7 +18,7 @@ pipeline {
         stage('Main') {
             steps {
                 container('shell') {
-                    sh '''#!/bin/bash
+                    sh '''#!/bin/bash -eux
                         pwd
                         whoami
                         hostname
