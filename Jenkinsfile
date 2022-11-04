@@ -27,7 +27,12 @@ pipeline {
                         ruby -v
                         type kubes
                         kubes -v
-                        env | sort
+                        gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
+                        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+                        mv kubectl /usr/local/bin/kubectl
+                        chmod +x /usr/local/bin/kubectl
+                        type kubectl
+
                     '''
                 }
             }
