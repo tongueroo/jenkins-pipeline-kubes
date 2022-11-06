@@ -7,3 +7,5 @@ ln -s /google-cloud-sdk/bin/gcloud /usr/local/bin/gcloud
 # so gcloud container clusters get-credentials works
 # https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 gcloud components install gke-gcloud-auth-plugin -q
+
+gcloud components install docker-credential-gcr -q

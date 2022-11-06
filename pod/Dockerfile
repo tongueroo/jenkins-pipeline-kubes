@@ -12,3 +12,5 @@ RUN setup/gcloud.sh
 
 COPY setup/docker.sh setup/docker.sh
 RUN setup/docker.sh
+
+ENV PATH="/google-cloud-sdk/bin:${PATH}"

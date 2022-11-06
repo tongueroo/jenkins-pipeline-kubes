@@ -34,6 +34,7 @@ pipeline {
                         ruby -v
                         type kubes
                         kubes -v
+                        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
                         git config --global --add safe.directory /home/jenkins/agent/workspace/jenkins-pipeline-kubes
 
