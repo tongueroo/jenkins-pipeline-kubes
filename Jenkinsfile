@@ -22,28 +22,28 @@ pipeline {
                         docker build -t test .
                     '''
                 }
-                container('shell') {
-                    sh '''#!/bin/bash -eux
-                        pwd
-                        whoami
-                        hostname
-                        echo "ENV_NAME: $ENV_NAME"
-                        type ruby
-                        ruby -v
-                        type kubes
-                        kubes -v
+                // container('shell') {
+                //     sh '''#!/bin/bash -eux
+                //         pwd
+                //         whoami
+                //         hostname
+                //         echo "ENV_NAME: $ENV_NAME"
+                //         type ruby
+                //         ruby -v
+                //         type kubes
+                //         kubes -v
 
-                        type gcloud
-                        gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
-                        gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
+                //         type gcloud
+                //         gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+                //         gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
 
-                        type kubectl
+                //         type kubectl
 
-                        type docker
+                //         type docker
 
-                        kubes deploy
-                    '''
-                }
+                //         kubes deploy
+                //     '''
+                // }
             }
         }
     }
