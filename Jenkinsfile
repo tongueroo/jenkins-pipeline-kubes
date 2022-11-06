@@ -29,6 +29,7 @@ pipeline {
                         whoami
                         hostname
                         echo "ENV_NAME: $ENV_NAME"
+                        echo "REPO: $REPO"
                         type ruby
                         ruby -v
                         type kubes
