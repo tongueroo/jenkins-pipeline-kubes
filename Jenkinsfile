@@ -7,6 +7,7 @@ pipeline {
 
     parameters {
         string(name: 'ENV_NAME', defaultValue: 'dev', description: 'Environment name')
+        string(name: 'REPO', defaultValue: 'gcr.io/boltops-learn/jenkins-demo')
     }
 
     environment {
