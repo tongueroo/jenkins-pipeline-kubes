@@ -35,6 +35,8 @@ pipeline {
                         type kubes
                         kubes -v
 
+                        git config --global --add safe.directory /home/jenkins/agent/workspace/jenkins-pipeline-kubes
+
                         type gcloud
                         gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
                         gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
