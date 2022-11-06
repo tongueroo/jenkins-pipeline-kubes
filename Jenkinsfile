@@ -34,7 +34,9 @@ pipeline {
 
                         type kubectl
 
+                        type docker
 
+                        kubes deploy
                     '''
                 }
             }
