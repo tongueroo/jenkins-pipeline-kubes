@@ -34,7 +34,7 @@ pipeline {
                         type kubes
                         kubes -v
 
-                        docker build -t test .
+                        // docker build -t test .
 
                         type gcloud
                         gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
