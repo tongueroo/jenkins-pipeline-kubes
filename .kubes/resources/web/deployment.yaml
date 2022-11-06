@@ -17,3 +17,7 @@ spec:
       containers:
       - name: web
         image: <%= docker_image %>
+<% if ENV['KUBES_SIDECAR_IMAGE'] %>
+      - name: sidecar
+        image: <%= ENV['KUBES_SIDECAR_IMAGE'] %>
+<% end %>

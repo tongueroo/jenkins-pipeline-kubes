@@ -23,6 +23,14 @@ pipeline {
                         git config --global --add safe.directory /home/jenkins/agent/workspace/jenkins-pipeline-kubes
                         gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
                         gcloud container clusters get-credentials dev-cluster --zone us-central1-a --project boltops-learn
+                        gcloud auth configure-docker
+
+                        cd sidecar
+                        export KUBES_SIDECAR_IMAGE=gcr.io/boltops-learn/jenkins-sidecar
+                        docker build -t $KUBES_SIDECAR_IMAGE .
+                        docker push $KUBES_SIDECAR_IMAGE
+                        cd -
+
                         kubes deploy
                     '''
                 }
