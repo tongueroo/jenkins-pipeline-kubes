@@ -9,3 +9,6 @@ RUN setup/kubectl.sh
 
 COPY setup/gcloud.sh setup/gcloud.sh
 RUN setup/gcloud.sh
+
+COPY setup/docker.sh setup/docker.sh
+# RUN setup/docker.sh
