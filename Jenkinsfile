@@ -17,6 +17,9 @@ pipeline {
     stages {
         stage('Main') {
             steps {
+                container('docker') {
+                    docker build -t test .
+                }
                 container('shell') {
                     sh '''#!/bin/bash -eux
                         pwd
