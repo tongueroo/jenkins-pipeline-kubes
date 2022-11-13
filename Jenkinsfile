@@ -1,6 +1,8 @@
 pipeline {
     agent {
         kubernetes {
+            cloud 'GKE-OP'
+            label 'demo-gcp'
             yamlFile 'pod.yaml'
         }
     }
