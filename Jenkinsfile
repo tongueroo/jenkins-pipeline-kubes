@@ -7,6 +7,7 @@ pipeline {
 
     parameters {
         string(name: 'ENV_NAME', defaultValue: 'dev', description: 'Environment name')
+        string(name: 'KUBES_SIDECAR_IMAGE', defaultValue: 'gcr.io/boltops-learn/jenkins-sidecar')
         string(name: 'REPO', defaultValue: 'gcr.io/boltops-learn/jenkins-demo')
     }
 
@@ -26,7 +27,7 @@ pipeline {
                         gcloud auth configure-docker
 
                         cd sidecar
-                        export KUBES_SIDECAR_IMAGE=gcr.io/boltops-learn/jenkins-sidecar
+                        # export KUBES_SIDECAR_IMAGE=gcr.io/boltops-learn/jenkins-sidecar
                         docker build -t $KUBES_SIDECAR_IMAGE .
                         docker push $KUBES_SIDECAR_IMAGE
                         cd -
