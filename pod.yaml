@@ -3,8 +3,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: gcr.io/boltops-learn/jenkins-worker
-    # image: ubuntu
+    image: tongueroo/demo-jenkins-worker
     command:
     - sleep
     args:
